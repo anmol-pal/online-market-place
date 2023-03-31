@@ -52,4 +52,13 @@ INSTALLED_APPS = [
     'core',
 ]
 ```
+Making migrations - updating database with new models added
 
+Will create a new table <code>Category</code> with field <b>id</b> and <b>name</b>
+```
+(marketplace) anmolpal@Anmols-MacBook-Air marketplaceProject % python3 manage.py makemigrations
+
+Migrations for 'item':
+  item/migrations/0001_initial.py
+    - Create model Category
+```
