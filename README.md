@@ -17,11 +17,11 @@ Create a Django-Project
 django-admin startproject marketplaceProject
 ```
 
-manage.py - is a script for running admin tasks like updating DB, adding super user , running dev server etc etc
-asgi.py - entry points for the server
-wsgi.py - entry points for the server
-settings.py - global config for entire project
-urls.py - like a table of content for entire project, links URL to a specific vew
+* manage.py - is a script for running admin tasks like updating DB, adding super user , running dev server etc etc
+* asgi.py - entry points for the server
+* wsgi.py - entry points for the server
+* settings.py - global config for entire project
+* urls.py - like a table of content for entire project, links URL to a specific vew
 
 To start the server
 ```
@@ -111,3 +111,21 @@ Updating database with new models added [Category]
     admin.site.register(Category)
     ```
 7. Check if a new table appears in database.
+
+Creating Modularized Views
+Creating a seperate [item url](marketplaceProject/item/urls.py) 
+Here<code>app_name = 'item'</code> is creating a namespace for this app and use them in main [url.py](marketplaceProject/marketplaceProject/urls.py). 
+```
+from django.urls import path
+from . import views
+
+app_name = 'item'
+urlpatterns=[
+    path('<int:pk>/',views.detail, name='detail'),
+]
+```
+
+and use it like this in your actual view [detail.html](marketplaceProject/item/templates/item/detail.html)
+```
+<a href="{% url 'item:detail' item.id %}">
+```
