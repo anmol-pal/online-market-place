@@ -31,7 +31,7 @@ python3 manage.py runserver
 
 We can divide Django app into different modules 
 ```
-python manage.py startapp core
+python3 manage.py startapp core
 ```
 This creates a new module (Django App)
     - migrations : will store information about database
@@ -63,7 +63,7 @@ Updating database with new models added [Category]
     item/migrations/0001_initial.py
         - Create model Category
     ```
-3. Applying them creates new tables <code>python manage.py migrate</code>
+3. Applying them creates new tables <code>python3 manage.py migrate</code>
     ```
     (marketplace) anmolpal@Anmols-MacBook-Air marketplaceProject % python3 manage.py migrate
     Operations to perform:
@@ -100,7 +100,7 @@ Updating database with new models added [Category]
     ```
     Access Django administration as
     ```
-    % python manage.py runserver 
+    % python3 manage.py runserver 
     <truncated output>
     Starting development server at http://127.0.0.1:8000/
     ```
